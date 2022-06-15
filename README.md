@@ -31,6 +31,25 @@ To download automatically the data from the [repository](https://github.com/pcm-
 ## Data preprocessing:
 This step consists in preparing the scraped dataset for the Recurrent Neural Network. 
 
+### Data cleaning
+We noticed that data about the first weeks of the pandemic was quite different from the current trend: for this reason, we discarded up to three weeks after the first available date, which was the 24th of January 2020.
+
+### Rescaling
+We rescaled all features using [`MinMaxScaler`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html). This type of scaling also reduces almost two zeros the initial values of the features: this is an advantage, since the current trend of the features under study seem
+to be very different when compared to their values during the first months of the pandemic.
+
+### Build samples
+From now on when we use the term *sample* to define one single input of the RNN. A sample is constucted by taking a certain number of days (this parameter is called **`window`**) to predict the following ones (the number of days to predict is called **`telescope`**). In our code we tried with `window` equal to 7, 14 and 21. An example of a sample is:
+
+| ![sample](readme_images/sample.PNG) |
+|:--:|
+| Number of hospitalized in Lombardy with window = 21. The orange dots are the number of hospitalized in the prediction time window.|
+
+Another important parameter is `stride`, which indicates the number of days between two subsequent samples. For example, `stride = window` means that the samples are non-overlapping. In our code, we used `stride` equal to one week.
+
+### Approaches
+
+
 ## Model:
 
 ## Predictions:
