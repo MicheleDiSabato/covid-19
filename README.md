@@ -6,7 +6,7 @@
 # Covid 19:
 In this project we use RNNs to predict the weekly values of four features related to the COVID 19 pandemic in Sicily, Lombardy and Lazio (IT).
 
-Each function is explained in the [Code](#Code) section.
+Each function is explained in the [Code](##Code) section.
 
 ## Dataset:
 The source of the dataset is the [GitHub repository](https://github.com/pcm-dpc/COVID-19) of the [Protezione Civile](https://en.wikipedia.org/wiki/Protezione_Civile), specifically [this link](https://github.com/pcm-dpc/COVID-19/tree/master/dati-province). We focused on the following features:
