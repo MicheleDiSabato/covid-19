@@ -72,7 +72,13 @@ predictions;
 (which involves only seven days).
 
 ### Model arichitecture
+![model_plot](readme_images/model_plot.png) |
+ :-------------------------:| 
+ Qualitative model structure (`Reshape` and `Dropout` layers have been removed to avoid overcomplicating the image)
 
+![model2](readme_images/model2.png)  |  ![model3](readme_images/model3.png)
+:-------------------------:|:-------------------------:
+Model structure             |  Technical plot
 ## Predictions:
 
 ## Conclusions:
