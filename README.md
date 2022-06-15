@@ -22,8 +22,11 @@ We only focus on:
 
 ## Goal:
 The goal is twofold:
-1. set up an automatic tool that accesses, updates and organizes the COVID-19 epidemiological data of Italy (on a regional basis) as explained in the [Dataset](#dataset) section;
+1. set up an **automatic tool** that accesses, updates and organizes the COVID-19 epidemiological data of Italy (on a regional basis) as explained in the [Dataset](#dataset) section
+2. **predict** four variables regarding the COVID19 pandemic situation in three regions in Italy
 
+## Scraping:
+To download automatically the data from the [repository](https://github.com/pcm-dpc/COVID-19) we used the libraries [`requests`](https://pypi.org/project/requests/) and [`bs4`](https://pypi.org/project/beautifulsoup4/). To minimize scraping time, the function [`update_files.csv`]() checks for new additions to the repository, to avoid dowloading files which are already present in the local folder. It's best to periodically download the entire folder from scratch, since sometimes the maintainers of the repository will change past csv files to correct mistakes or wrongly reported data.
 
 ## Data preprocessing:
 
