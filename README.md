@@ -174,7 +174,7 @@ covid-19/
 |   |── recovered_7
 |   |── recovered_14
 |   |── recovered_21
-├── readme_images/
+├── readme_images/                  # plots for "README.md"
 │   ├── deceased_sicilia.png
 │   ├── hosp_1.PNG
 │   ├── hosp_2.PNG
