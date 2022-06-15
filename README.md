@@ -55,9 +55,23 @@ Three approaches are possible:
 |Model name |Description |Advantages |Disadvantages 
 |-----|------------|-----------|-------------|
 |**many-to-many** | forecast all four features, using all four features | 1. allows us to take into account the correlation among the variables | 1. to follow this approach one should transform all the features either in daily or in cumulative form, otherwise the network’s forecast would be highly influenced by some features and completely miss the others <br/> 2. requires to have a powerful model
-|**many-to-one** | forecast one single feature at a time, using all four categories | 1. allows us to take into account the correlation among the variables <br/> 2. should require a less powerful model, since it would predict only one scalar (not a vector as in the *many-to-many* approach) | 1. model design is not trivial <br/> 2. for our goal (7-days-ahead-prediction) is correlation really that important?
+|**many-to-one** | forecast one single feature at a time, using all four categories | 1. allows us to take into account the correlation among the variables <br/> 2. should require a less powerful model, since it would predict only one scalar (not a vector as in the *many-to-many* approach) | 1. model design is not trivial <br/> 2. for our goal (7-days-ahead-prediction) is correlation really *that* important?
 |**one-to-many** | forecast one single feature at a time, considering only its past values | 1. the model is much more lightweight than the other two | 1. each feature is predicted independently from the others (not necessarily a limitation)
 
+For each of this choices, we have two possible frameworks:
+- **one-shot**: predict all 7 days at once.
+- **autoregressive**: use the `window` past days to predict only one, then include this prediction in the training set, roll the training window and predict the second day. Repeat this "rolling prediction" procedure until
+all 7 days have been predicted.
+
+We implemented all the three methodologies, but we decided to use the <u>**one-to-one approach with a one-shot prediction**</u> as our final model for the following reasons:
+1. <u>computational cost:</u> the model is trained with less computational cost;
+2. <u>error growth:</u> the many-to-many and many-to-one approach require the dataset to be composed of all cumulative features, but since we need to forecast also some daily quantities, at the testing time we need to convert the
+daily features back to daily values. This step enlarges significantly the errors made on the cumulative
+predictions;
+3. <u>effect of the correlation:</u> while it is true that the selected features are correlated, the effects of this correlation seem to be evident in time periods longer than one week, so they would likely not influence nor be useful for our prediction
+(which involves only seven days).
+
+### Model arichitecture
 
 ## Predictions:
 
