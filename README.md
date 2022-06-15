@@ -132,6 +132,8 @@ Here are some plots that showcase the predictive ability of our model:
   </tr>
 </table>
 
+**Remark:** the pre-trained model used for Lombardy is an ensemble of 3 models using `window` equal to 7, 14 and 21, respectively.
+
 ## Code and structure of the repository: 
 ```
 covid-19/
@@ -204,6 +206,7 @@ covid-19/
 
 Note that **results are shown in [prevision_covid.ipynb](prevision_covid.ipynb)**, which contains important information about which parameters to modify in order to update and re-train the models. The rest of the scripts are used to collect and pre-process the data and post-process the results.
 
+**Remark:** the pre-trained model used for Lombardy is an ensemble of 3 models using `window` equal to 7, 14 and 21, respectively.
 
 
 
