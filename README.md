@@ -47,10 +47,17 @@ From now on when we use the term *sample* to define one single input of the RNN.
 
 Another important parameter is `stride`, which indicates the number of days between two subsequent samples. For example, `stride = window` means that the samples are non-overlapping. In our code, we used `stride` equal to one week.
 
-### Approaches
-
-
 ## Model:
+We used [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) networks as building blocks for our model, for their well known properties.
+
+### Approaches
+Three approaches are possible:
+|Model name |Description |Advantages |Disadvantages 
+|-----|------------|-----------|-------------|
+|**many-to-many** | forecast all four features, using all four features | 1. allows us to take into account the correlation among the variables | 1. to follow this approach one should transform all the features either in daily or in cumulative form, otherwise the network’s forecast would be highly influenced by some features and completely miss the others <br/> 2. requires to have a powerful model
+|**many-to-one** | forecast one single feature at a time, using all four categories | 1. allows us to take into account the correlation among the variables <br/> 2. should require a less powerful model, since it would predict only one scalar (not a vector as in the *many-to-many* approach) | 1. model design is not trivial <br/> 2. for our goal (7-days-ahead-prediction) is correlation really that important?
+|**one-to-many** | forecast one single feature at a time, considering only its past values | 1. the model is much more lightweight than the other two | 1. each feature is predicted independently from the others (not necessarily a limitation)
+
 
 ## Predictions:
 
