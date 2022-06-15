@@ -32,7 +32,7 @@ To download automatically the data from the [repository](https://github.com/pcm-
 This step consists in preparing the scraped dataset for the Recurrent Neural Network. 
 
 ### Data cleaning
-We noticed that data about the first weeks of the pandemic was quite different from the current trend: for this reason, we discarded up to three weeks after the first available date, which was the 24th of January 2020.
+We noticed that data about the first weeks of the pandemic was quite different from the current trend. Moreoever, in the first few weeks of 2020 the tracking protocol of the pandemic was at its initial stages, so possible errors in the registration of some data might have occurred. For these two reasons, we discarded the three weeks after the first available date, which was the 24th of January 2020.
 
 ### Rescaling
 We rescaled all features using [`MinMaxScaler`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html). This type of scaling also reduces almost two zeros the initial values of the features: this is an advantage, since the current trend of the features under study seem
