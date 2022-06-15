@@ -29,6 +29,7 @@ The goal is twofold:
 To download automatically the data from the [repository](https://github.com/pcm-dpc/COVID-19) we used the libraries [`requests`](https://pypi.org/project/requests/) and [`bs4`](https://pypi.org/project/beautifulsoup4/). To minimize scraping time, the function [`update_files.csv`]() checks for new additions to the repository, to avoid dowloading files which are already present in the local folder. It's best to periodically download the entire folder from scratch, since sometimes the maintainers of the repository will change past csv files to correct mistakes or wrongly reported data.
 
 ## Data preprocessing:
+This step consists in preparing the scraped dataset for the Recurrent Neural Network. 
 
 ## Model:
 
