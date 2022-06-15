@@ -6,7 +6,15 @@
 # Covid 19:
 In this project we use RNNs to predict the weekly values of four features related to the COVID 19 pandemic in Sicily, Lombardy and Lazio (IT).
 
-Each function is explained in the [Code](#code-and-structure-of-the-repository) section. Note that **results are shown in [prevision_covid.ipynb](prevision_covid.ipynb)**, which contains important information about which parameters to modify in order to update and re-train the models. The rest of the scripts are used to collect and pre-process the data and post-process the results.
+Each function is explained in the [Code](#code-and-structure-of-the-repository) section.
+
+Note that 
+* **results are shown in [prevision_covid.ipynb](prevision_covid.ipynb)**, which contains important information about which parameters to modify in order to update and re-train the models. The rest of the scripts are used to collect and pre-process the data and post-process the results.
+* the notebook [prevision_covid.ipynb](prevision_covid.ipynb) is entirely self-contained: the user just needs to select which region and feature to work on and how to treat the selected feature, the notebook will take care of 
+   - dowloading the data from the [online repository](https://github.com/pcm-dpc/COVID-19)
+   - train all 3 models
+   - test them
+   - return the prediction for the next 7 days
 
 ## Dataset:
 The source of the dataset is the [GitHub repository](https://github.com/pcm-dpc/COVID-19) of the [Protezione Civile](https://en.wikipedia.org/wiki/Protezione_Civile), specifically [this link](https://github.com/pcm-dpc/COVID-19/tree/master/dati-province). We focused on the following features:
