@@ -124,10 +124,73 @@ Here are some plots that showcase the predictive ability of our model:
 
 ## Code and structure of the repository: 
 ```
-COVID-19/
+covid-19/
 │
-├── aree/
-│   ├── geojson
+├── regional_data_covid/            # dataset
+│   ├── ...
+├── create_dataframes.py/           # used to transform data into pandas.DataFrame
+├── prevision_covid.ipynb/          # contains model and data pre-processing
+├── README.md/                      # 
+├── scrape.py/                      # used to scrape the repository containing the data
+├── scraper.py/                     # used to scrape the repository containing the data
+├── update_files.py/                # used to update the local folder "regional_data_covid"
+├── util.py/                        # contains useful functions used in "prevision_covid.ipynb"
+├── Lombardia_models/               # pre-trained models for Lombardy
+│   ├── deceased_7
+|   |── deceased_14
+|   |── deceased_21
+|   |── hospitalized_7
+|   |── hospitalized_14
+|   |── hospitalized_21
+|   |── new_daily_infections_7
+|   |── new_daily_infections_14
+|   |── new_daily_infections_21
+|   |── recovered_7
+|   |── recovered_14
+|   |── recovered_21
+├── Lazio_models/                   # pre-trained models for Lazio
+│   ├── deceased_7  
+|   |── deceased_14
+|   |── deceased_21
+|   |── hospitalized_7
+|   |── hospitalized_14
+|   |── hospitalized_21
+|   |── new_daily_infections_7
+|   |── new_daily_infections_14
+|   |── new_daily_infections_21
+|   |── recovered_7
+|   |── recovered_14
+|   |── recovered_21
+├── Sicilia_models/                 # pre-trained models for Sicily
+│   ├── deceased_7
+|   |── deceased_14
+|   |── deceased_21
+|   |── hospitalized_7
+|   |── hospitalized_14
+|   |── hospitalized_21
+|   |── new_daily_infections_7
+|   |── new_daily_infections_14
+|   |── new_daily_infections_21
+|   |── recovered_7
+|   |── recovered_14
+|   |── recovered_21
+├── readme_images/
+│   ├── deceased_sicilia.png
+│   ├── hosp_1.PNG
+│   ├── hosp_2.PNG
+│   ├── hosp_3.PNG
+│   ├── hosp_4.PNG
+│   ├── hospitalized.png
+│   ├── infect_lazio_14.png
+│   ├── infect_lazio_21.png
+│   ├── infect_lazio_7.png
+│   ├── model2.png
+│   ├── model3.PNG
+│   ├── model_plot.PNG
+│   ├── new_daily_infections.png
+│   ├── recovered sicilia.png
+│   ├── sample.png
+
 │   │   ├── dpc-covid-19-ita-aree-comuni.geojson
 │   │   ├── dpc-covid19-ita-aree.geojson
 │   ├── shp
