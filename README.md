@@ -41,7 +41,7 @@ to be very different when compared to their values during the first months of th
 ### Build samples
 From now on when we use the term *sample* to define one single input of the RNN. A sample is constucted by taking a certain number of days (this parameter is called **`window`**) to predict the following ones (the number of days to predict is called **`telescope`**). In our code we tried with `window` equal to 7, 14 and 21. An example of a sample is:
 
-| ![sample](readme_images/sample.PNG) |
+| ![sample](readme_images/sample.png) |
 |:--:|
 | Number of hospitalized in Lombardy with window = 21. The orange dots are the number of hospitalized in the prediction time window.|
 
