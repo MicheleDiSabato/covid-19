@@ -79,9 +79,48 @@ predictions;
 ![model2](readme_images/model2.png)  |  ![model3](readme_images/model3.PNG)
 :-------------------------:|:-------------------------:
 Model structure             |  Technical plot
-## Predictions:
 
-## Conclusions:
+## Predictions:
+Here are some plots that showcase the predictive ability of our model:
+* hospitalized in Lombardy:
+<table>
+  <tr>
+    <img src="readme_images/hosp_1.PNG"style="height: 150px; width:300px;"/>
+    <img src="readme_images/hosp_2.PNG"style="height: 150px; width:300px;"/>
+  </tr>
+  
+  <tr>
+    <img src="readme_images/hosp_3.PNG"style="height: 150px; width:300px;"/>
+    <img src="readme_images/hosp_4.PNG"style="height: 150px; width:300px;"/>
+  </tr>
+</table>
+
+* infected in Lazio:
+<table>
+  <tr>
+    <img src="readme_images/infect_lazio_7.png"style="height: 150px; width:300px;"/>
+    <img src="readme_images/infect_lazio_14.png"style="height: 150px; width:300px;"/>
+  </tr>
+  
+  <tr>
+  <center>
+    <img src="readme_images/infect_lazio_21.png"style="height: 150px; width:300px;"/>
+  </center>
+  </tr>
+</table>
+
+* deceased, hospitalized, infected and recovered in Sicily:
+<table>
+  <tr>
+    <img src="readme_images/deceased_sicilia.png"style="height: 150px; width:300px;"/>
+    <img src="readme_images/hospitalized.png"style="height: 150px; width:300px;"/>
+  </tr>
+  
+  <tr>
+    <img src="readme_images/new_daily_infections.png"style="height: 150px; width:300px;"/>
+    <img src="readme_images/recovered sicilia.png"style="height: 150px; width:300px;"/>
+  </tr>
+</table>
 
 ## Code and structure of the repository: 
 ```
