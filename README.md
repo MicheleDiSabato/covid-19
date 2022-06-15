@@ -31,14 +31,14 @@ To download automatically the data from the [repository](https://github.com/pcm-
 ## Data preprocessing:
 This step consists in preparing the scraped dataset for the Recurrent Neural Network. 
 
-### Data cleaning
+### 1. Data cleaning
 We noticed that data about the first weeks of the pandemic was quite different from the current trend. Moreoever, in the first few weeks of 2020 the tracking protocol of the pandemic was at its initial stages, so possible errors in the registration of some data might have occurred. For these two reasons, we discarded the three weeks after the first available date, which was the 24th of January 2020.
 
-### Rescaling
+### 2. Rescaling
 We rescaled all features using [`MinMaxScaler`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html). This type of scaling also reduces almost two zeros the initial values of the features: this is an advantage, since the current trend of the features under study seem
 to be very different when compared to their values during the first months of the pandemic.
 
-### Build samples
+### 3. Build samples
 From now on when we use the term *sample* to define one single input of the RNN. A sample is constucted by taking a certain number of days (this parameter is called **`window`**) to predict the following ones (the number of days to predict is called **`telescope`**). In our code we tried with `window` equal to 7, 14 and 21. An example of a sample is:
 
 | ![sample](readme_images/sample.png) |
