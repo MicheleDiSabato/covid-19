@@ -5,3 +5,40 @@
 
 # Covid 19:
 In this project we use RNNs to predict the weekly values of four features related to the COVID 19 pandemic in Sicily, Lombardy and Lazio (IT).
+
+Each function is explained in the [Code](##Code) section.
+
+## Dataset:
+
+## Goal:
+
+## Data preprocessing:
+
+## Model:
+
+## Predictions:
+
+## Conclusions:
+
+## Code: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
