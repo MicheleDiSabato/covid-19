@@ -47,6 +47,8 @@ From now on when we use the term *sample* to define one single input of the RNN.
 
 Another important parameter is `stride`, which indicates the number of days between two subsequent samples. For example, `stride = window` means that the samples are non-overlapping. In our code, we used `stride` equal to one week.
 
+Based on our choice for training samples, the model will not simply learn the prediction for the next 7 days, but rather it will learn to predict the future **pattern**, based on the inforation carried by the `window` past days.
+
 ## Model:
 We used [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) networks as building blocks for our model, for their well known properties.
 
