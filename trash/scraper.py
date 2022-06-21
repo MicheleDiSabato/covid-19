@@ -1,4 +1,3 @@
-import os 
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -74,7 +73,7 @@ def get_data(number_of_days=None, NoneChar = '-'):
             d.append(row)
         # d is a list with 21 components, each of them is a list with 24 components
 
-        # now i need to post process each component to transform string into numbers where necessary
+        # post process each component to transform string into numbers where necessary
         for region_index, region in enumerate(d):
             for feature_index in range(len(region)):
                 if feature_index in numerical_features_index and region[feature_index] != NoneChar:
@@ -136,6 +135,7 @@ def save_data(table_list, directory_name, number_of_days=None, NoneChar = '-'):
     - number_of_days: used to call get_csv_names().
     - NoneChar: char used to fill empty or missing data.
     '''
+    import os  
     os.makedirs(directory_name, exist_ok=True) 
     day_names = get_csv_names(number_of_days, NoneChar) 
     for index, day in enumerate(table_list):
@@ -143,11 +143,9 @@ def save_data(table_list, directory_name, number_of_days=None, NoneChar = '-'):
         day.to_csv(filename, index = False)
     return 0
 
-def scrape(foldername, save_files = True, number_of_days=None, NoneChar = '-'):
-    '''
-    Scrapes https://github.com/pcm-dpc/COVID-19/tree/master/dati-regioni and returns the list of tables.
-    '''
-    table_list = get_data(number_of_days, NoneChar)
-    if save_files == True:
-        save_data(table_list, foldername, number_of_days, NoneChar)
-    return table_list
+if __name__ == "__main__":
+    foldername = "regional_data_covid"
+    table_list = get_data()
+    save_data(table_list, foldername)
+    
+

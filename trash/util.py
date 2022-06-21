@@ -70,6 +70,7 @@ def inspect_multivariate(X, y, columns, telescope, idx=None, plot_type = "line")
         if plot_type == "line":
             axs[i].plot(np.arange(len(X[0,:,i]), len(X[0,:,i])+telescope), y[idx,:,i], color='orange')
         axs[i].set_title(col)
+        # axs[i].set_ylim(0-0.1,1+0.1)
     plt.show()
     
 def inspect_univariate(X, y, columns, telescope, idx=None, plot_type = "line"):
@@ -106,6 +107,7 @@ def inspect_multivariate_prediction(X, y, pred, columns, telescope, idx=None, pl
             axs[i].scatter(np.arange(len(X[0,:,i]), len(X[0,:,i])+telescope), y[idx,:,i], color='orange')
             axs[i].scatter(np.arange(len(X[0,:,i]), len(X[0,:,i])+telescope), pred[idx,:,i], color='green')             
         axs[i].set_title(col)
+        # axs[i].set_ylim(0-0.1,1+0.1)
     plt.show()
 
 def inspect_univariate_prediction(X, y, pred, columns, telescope, idx=None, plot_type = "line"):

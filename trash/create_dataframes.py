@@ -45,6 +45,7 @@ def create_dataframe():
     return recovered_df, new_daily_infections_df, hospitalized_df, deceased_df
 
 
+#This function creates a single dataframe containing the 4 variable obserbed in "region"
 def create_dataframe_region(region):
     '''
     Returns the data related to the resion identified by the index "region".
@@ -93,7 +94,7 @@ def create_dataframe_region(region):
     
 if __name__ == "__main__":
     '''
-    Create 3 csv files, one for every region.
+    Create 3 csv files, each for every region.
     '''
     # Lombardia: 8
     # Lazio: 6
@@ -105,16 +106,16 @@ if __name__ == "__main__":
     d1_lazio, d2_lazio = create_dataframe_region(6)
     d_lazio = d2_lazio
     for feature in range(d_lombardia.shape[1]):
-        with open("lombardia_csv" + os.sep + "lombardia_"+d_lombardia.columns.values[feature] + ".csv", 'w') as f:
+        with open("lombardia_csv/"+"lombardia_"+d_lombardia.columns.values[feature] + ".csv", 'w') as f:
             for day in range(d_lombardia.shape[0]):
                 f.write(str(d_lombardia.iloc[day, feature]) + '\n')
-        with open("lazio_csv" + os.sep + "lazio_"+d_lazio.columns.values[feature] + ".csv", 'w') as f:
+        with open("lazio_csv/"+"lazio_"+d_lazio.columns.values[feature] + ".csv", 'w') as f:
             for day in range(d_lazio.shape[0]):
                 f.write(str(d_lazio.iloc[day, feature]) + '\n')
-        with open("sicilia_csv" + os.sep + "sicilia_"+d_sicilia.columns.values[feature] + ".csv", 'w') as f:
+        with open("sicilia_csv/"+"sicilia_"+d_sicilia.columns.values[feature] + ".csv", 'w') as f:
             for day in range(d_sicilia.shape[0]):
                 f.write(str(d_sicilia.iloc[day, feature]) + '\n')
-    with open("lombardia_csv" + os.sep + "lombardia_all.csv", "w") as f:
+    with open("lombardia_csv/"+"lombardia_all.csv", "w") as f:
         for day in range(d_lombardia.shape[0]):
             f.write(str(d_lombardia.iloc[day, 0]) + "," + str(d_lombardia.iloc[day, 1]) + "," + str(d_lombardia.iloc[day, 2]) + "," + str(d_lombardia.iloc[day, 3]) + '\n')
 
